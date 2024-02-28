@@ -23,7 +23,7 @@ services:
     volumes:
       - /secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
     ports:
-      - "3001:3001"
+      - "3001:3000"
       - "2224:2224"
   managedhost-app-3:
     build: 
@@ -35,5 +35,5 @@ services:
     volumes:
       - /secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
     ports:
-      - "3003:3003"
+      - "3003:3000"
       - "2225:2225"
