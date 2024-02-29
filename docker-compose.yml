@@ -9,10 +9,10 @@ services:
     environment:
       - SSH_ENABLE_ROOT=true
     volumes:
-      - /secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
+      - ./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
     ports:
-      - "3000:3000"
-      - "2223:2223"
+      - "3000:3000" # Web
+      - "2223:2223" # SSH
   managedhost-app-2:
     build: 
       context: managed-host/alpine/app2
@@ -21,10 +21,10 @@ services:
     environment:
       - SSH_ENABLE_ROOT=true
     volumes:
-      - /secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
+      - ./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
     ports:
-      - "3001:3000"
-      - "2224:2224"
+      - "3001:3000" # Web
+      - "2224:2224" # SSH
   managedhost-app-3:
     build: 
       context: managed-host/alpine/app3
@@ -33,7 +33,7 @@ services:
     environment:
       - SSH_ENABLE_ROOT=true
     volumes:
-      - /secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
+      - ./secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
     ports:
-      - "3003:3000"
-      - "2225:2225"
+      - "3002:3000" # Web
+      - "2225:2225" # SSH
